@@ -1,8 +1,9 @@
 #pragma once
 #include "iostream"
 #include <map>
-#include "Database_RAII.hpp"
 #include <random>
+#include <memory>
+#include "Database.hpp"
 
 
 class Algorithme {
@@ -23,6 +24,8 @@ private:
 
 	//Reset the values in the alfabet map
 	void Set_Alfabet_Nul();
+
+	std::unique_ptr<Database> db = std::make_unique<Database>("../numerals.db");
 
 	int language_id;
 	std::map<char, int> alfabet;

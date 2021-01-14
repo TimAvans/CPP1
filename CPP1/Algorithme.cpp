@@ -4,12 +4,10 @@
 Algorithme::Algorithme(int language_id)
 {
     this->language_id = language_id;
-    Database_RAII dbr{};
     for (size_t i = 0; i < 200; i++)
     {
-        written_numbers[i] = dbr.Get_Database().Select_Number(i, language_id);
+        written_numbers[i] = db->Select_Number(i, language_id);
     }
-    dbr.~Database_RAII();
 }
 
 std::string Algorithme::Run_Algorithme(const std::string& start_sentence)

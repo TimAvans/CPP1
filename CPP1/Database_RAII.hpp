@@ -1,6 +1,8 @@
 #pragma once
 #include "Database.hpp"
 
+
+//Deze word niet meer gebruikt, ik maak gebruik van een smartpointer
 class Database_RAII {
 public:
 	Database_RAII();
